@@ -3,7 +3,7 @@
 
 
 using namespace std;
-
+// 做的不好啊 
 class string_copy {
 private:
     char* content;
