@@ -37,8 +37,6 @@ int main(int argc,char *argv[]){
 
 /*
 原因是pthread_create希望第三个参数是一个函数指针，它接受一个void*参数，返回一个void*指针。
-*/
 
-/*
 int pthread_create(pthread_t *tidp,const pthread_attr_t *attr,void *(*start_rtn)(void*),void *arg);
 */

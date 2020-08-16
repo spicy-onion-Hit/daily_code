@@ -8,24 +8,38 @@ class Solution{
             quick_sort(left, right, nums);
             return nums;
         }
-        void quick_sort(int left, int right, vector<int>& nums){
+        /*void quick_sort(int left, int right, vector<int>& nums){
             if (left >= right)
                 return;
             int key = nums[left];
             int index = left;
             for(int i = left+1; i <= right; i++){
                 if (nums[i] <= key){
-                    swap(nums[i], nums[++left]);
+                    swap(nums[i], nums[++index]);
                 }
             }
             swap(nums[left] , nums[index]);
             quick_sort(left,  index-1, nums);
             quick_sort(index+1,  right, nums);
-        }   
+        }*/
+        void quick_sort(int left, int right, vector<int>& nums){
+            if (left >= right)
+                return;
+            int key = nums[left];
+            int index = left+1;
+            for(int i = left+1; i <= right; i++){
+                if (nums[i] <= key){
+                    swap(nums[i], nums[++index]);
+                }
+            }
+            swap(nums[left] , nums[index]);
+            quick_sort(left,  index-1, nums);
+            quick_sort(index+1,  right, nums);
+        }    
 };
 
 int main(){
-    vector<int> array = { 1,2,3,5};
+    vector<int> array = { 1,2,3,5,2,1,1,2,44,2,2156,32};
     Solution ss;
     ss.array_sort(array);
     int n = array.size();
